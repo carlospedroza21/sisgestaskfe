@@ -1,5 +1,8 @@
 # Sisgestaskfe
 
+Sistema de gestion de tareas del equipo tecnico.
+Este README servira para documentar lo necesario en la prueba tecnica para trycore.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
 
 ## Development server
