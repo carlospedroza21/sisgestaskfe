@@ -1,4 +1,24 @@
-<p>task-create works!</p>
+<header>
+    <h2>Crear Tarea asignando un usuario</h2>
+</header>
+<section>
+    <form [formGroup]="applyForm" (submit)="submitCreateTask()">
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name" />
+
+        <label for="user">User</label>
+        <select name="user" formControlName="user" [ngModel]="userSeleccionado">
+            <option *ngFor="let user of users" [ngValue]="user">{{user.name}}</option>
+        </select>
+
+        <label for="state">Task State</label>
+        <select name="state" formControlName="state">
+            <option *ngFor="let state of states">{{state}}</option>
+        </select>    
+
+        <button type="submit" class="primary">Create Task</button>
+    </form>
+</section>
 <section>
     <a [routerLink]="['']">Volver</a>
 </section>

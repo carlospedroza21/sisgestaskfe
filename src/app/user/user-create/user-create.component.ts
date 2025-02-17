@@ -21,7 +21,7 @@ export class UserCreateComponent {
   applyForm = new FormGroup({
     name: new FormControl(''),
     email: new FormControl(''),
-    role: new FormControl(null),
+    role: new FormControl(null) ?? UserRole.DEV,
   });
 
   constructor() { 
