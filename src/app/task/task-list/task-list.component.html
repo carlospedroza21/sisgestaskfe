@@ -1,7 +1,5 @@
-<section>
-    <p>task-list works!</p>
-</section>
-<section>
-    <a [routerLink]="['/task/assign']">Asignar tareas a los usuarios</a>
-    <a [routerLink]="['']">Volver</a>
+<section class="results">
+    <p>Nombre tarea: {{task.name}}</p>
+    <p>Nombre del usuario: {{task.user.name}} </p>
+    <p>Estado: {{task.state}}</p>
 </section>
