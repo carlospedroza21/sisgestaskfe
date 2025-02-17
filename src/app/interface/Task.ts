@@ -1,5 +1,5 @@
 import { TaskState } from '../enumeration/TaskState';
-import { User } from './User';
+import { User } from './user';
 
 export interface Task {
     id: number,
