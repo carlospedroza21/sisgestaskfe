@@ -24,7 +24,9 @@ export class TaskCreateComponent {
 
   constructor() { 
     this.states = [TaskState.PENDIENTE, TaskState.EN_PROGRESO, TaskState.COMPLETADA];
-    this.users = this.userService.getAllUsers();
+    this.userService.getAllUsers().then((userList: User[]) => {
+      this.users = userList;
+    });
   }
 
   applyForm = new FormGroup({

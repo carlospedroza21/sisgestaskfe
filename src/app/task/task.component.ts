@@ -14,9 +14,25 @@ import { TaskListServiceTsService } from '../services/task-list-service.ts.servi
 })
 export class TaskComponent {
   tasksList: Task[] = [];
+  filteredTaskList: Task[] = [];
   taskListService: TaskListServiceTsService = inject(TaskListServiceTsService);
 
   constructor() {
-    this.tasksList = this.taskListService.getAllTasks();
+    this.taskListService.getAllTasks().then((tasksList: Task[]) => {
+      this.tasksList = tasksList;
+      this.filteredTaskList = tasksList;
+    });
+  }
+
+  filterResults(searchText: string) {
+    if(!searchText) this.filteredTaskList = this.tasksList;
+
+    this.filteredTaskList = this.tasksList.filter((task: Task) => {
+      return task.state.includes(searchText);
+    });
+
+    this.filteredTaskList = this.tasksList.filter((task: Task) => {
+      return task.user.name.includes(searchText);
+    });
   }
 }

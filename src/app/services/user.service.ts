@@ -7,20 +7,7 @@ import { User } from '../interface/user';
 })
 export class UserService {
 
-protected users: User[] = [
-  {
-    "id": 3,
-    "name": "Maria Lopez",
-    "email": "marialopez@gmail.com",
-    "userRole": UserRole.DEV
-  },
-  {
-    "id": 4,
-    "name": "Lucia Jimenez",
-    "email": "luciajimenez@gmail.com",
-    "userRole": UserRole.DEV
-  }
-];
+  urlUsers = 'http://localhost:3000/users';
 
   constructor() { }
 
@@ -28,7 +15,8 @@ protected users: User[] = [
     console.log(`User created: ${name} ${email} at ${role}`);
   }
 
-  getAllUsers(): User[] {
-    return this.users;
+  async getAllUsers(): Promise<User[]> {
+    const data = await fetch(this.urlUsers);
+    return await data.json() ?? [];
   }
 }

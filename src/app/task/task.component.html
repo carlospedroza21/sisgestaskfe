@@ -1,5 +1,11 @@
 <section>
-    <app-task-list *ngFor="let task of tasksList" [task] = "task"></app-task-list>
+    <form>
+        <input type="text" placeholder="Filter by task state or User" #filter />
+        <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+    </form>
+</section>
+<section>
+    <app-task-list *ngFor="let task of filteredTaskList" [task] = "task"></app-task-list>
 </section>
 <section>
     <a [routerLink]="['/task/assign']">Asignar tareas a los usuarios</a>

@@ -7,54 +7,22 @@ import { TaskState } from '../enumeration/TaskState';
   providedIn: 'root'
 })
 export class TaskListServiceTsService {
-
-  protected tasksList: Task[] = [
-    {
-      "id": 3,
-      "name": "Tarea 3",
-      "user": {
-        "id": 3,
-        "name": "Maria Lopez",
-        "email": "marialopez@gmail.com",
-        "userRole": UserRole.DEV
-      },
-      "state": TaskState.EN_PROGRESO
-    },
-    {
-      "id": 4,
-      "name": "Tarea 4",
-      "user": {
-        "id": 3,
-        "name": "Maria Lopez",
-        "email": "marialopez@gmail.com",
-        "userRole": UserRole.DEV
-      },
-      "state": TaskState.PENDIENTE
-    },
-    {
-      "id": 5,
-      "name": "Tarea 5",
-      "user": {
-        "id": 3,
-        "name": "Maria Lopez",
-        "email": "marialopez@gmail.com",
-        "userRole": UserRole.DEV
-      },
-      "state": TaskState.COMPLETADA
-    }  
-  ];
+  urlTasks = 'http://localhost:3000/tasks';
 
   constructor() { }
 
-  getAllTasks(): Task[] {
-    return this.tasksList;
+  async getAllTasks(): Promise<Task[]> {
+    const data = await fetch(this.urlTasks);
+    return await data.json() ?? [];
   }
 
-  getTasksByTaskState(taskState: string): Task[] | undefined {
-    return this.tasksList.filter(task => task.state === taskState);
+  async getTasksByTaskState(taskState: string): Promise<Task[] | undefined> {
+    const data = await fetch(this.urlTasks+"?state="+taskState);
+    return await data.json() ?? [];
   }
 
-  getTaskByUserId(userId: number): Task[] | undefined {
-    return this.tasksList.filter(task => task.user.id === userId);
-  }
+ async getTaskByUserId(userId: number): Promise<Task[] | undefined> {
+    const data = await fetch(this.urlTasks+"?user.id"+userId);
+    return await data.json() ?? [];
+ }
 }

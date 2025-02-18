@@ -1,0 +1,51 @@
+{
+    "tasks": [
+        {
+          "id": 3,
+          "name": "Tarea 3",
+          "user": {
+            "id": 3,
+            "name": "Maria Lopez",
+            "email": "marialopez@gmail.com",
+            "userRole": "DESARROLLADOR"
+          },
+          "state": "EN_PROGRESO"
+        },
+        {
+          "id": 4,
+          "name": "Tarea 4",
+          "user": {
+            "id": 3,
+            "name": "Maria Lopez",
+            "email": "marialopez@gmail.com",
+            "userRole": "DESARROLLADOR"
+          },
+          "state": "PENDIENTE"
+        },
+        {
+          "id": 5,
+          "name": "Tarea 5",
+          "user": {
+            "id": 4,
+            "name": "Lucia Jimenez",
+            "email": "luciajimenez@gmail.com",
+            "userRole": "DESARROLLADOR"
+        },
+          "state": "COMPLETADA"
+        }
+    ],
+    "users": [
+        {
+            "id": 3,
+            "name": "Maria Lopez",
+            "email": "marialopez@gmail.com",
+            "userRole": "DESARROLLADOR"
+        },
+        {
+            "id": 4,
+            "name": "Lucia Jimenez",
+            "email": "luciajimenez@gmail.com",
+            "userRole": "DESARROLLADOR"
+        }
+    ]
+}
