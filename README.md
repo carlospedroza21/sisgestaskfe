@@ -6,6 +6,8 @@
 
 - Para este componente utilice la tecnologia Angular
 
+- Para construir este componente me guie del manual https://angular.dev/tutorials
+
 - Utilice la herramienta json-server para simular las respuetas de los servicios. Este se puede subit con el comando json-server --watch db.json
 
 - Deje en la carpeta C4 los diagramas de los dos niveles iniciales del modelo.
